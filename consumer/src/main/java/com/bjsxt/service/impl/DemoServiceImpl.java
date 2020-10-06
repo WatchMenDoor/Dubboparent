@@ -16,7 +16,6 @@ public class DemoServiceImpl implements DemoService {
 
     @Override
     public String showInfo(String str) {
-        System.out.println(demoDubboService);
         return this.demoDubboService.showMsg(str);
     }
 }

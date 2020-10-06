@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:dubbot="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--配置服务名称-->
+    <dubbo:application name="myConsumer"/>
+    <!--配置注册中心地址以及访问协议-->
+    <dubbo:registry address="192.168.9.133:2181" protocol="zookeeper" timeout="10000"/>
+    <!--dubbo扫描自己@Reference注解-->
+    <dubbo:annotation package="com.bjsxt.service.impl"/>
+</beans>

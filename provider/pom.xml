@@ -37,5 +37,28 @@
             <artifactId>curator-framework</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <!-- 指定项目的打包插件信息, maven install 特性变更. 变化为-打包. -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <!-- 指定打包描述文件的位置：相对项目根目录的路径 -->
+                    <!-- assembly打包的描述文件 -->
+                    <descriptor>assembly/assembly.xml</descriptor>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <!-- 要执行的功能. 打包. -->
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

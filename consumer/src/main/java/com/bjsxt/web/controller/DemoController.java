@@ -12,7 +12,7 @@ public class DemoController {
 
     @RequestMapping("/get")
     public String getMsg(String str) {
-        System.out.println("=========================");
+
         return this.demoService.showInfo(str);
     }
 }
